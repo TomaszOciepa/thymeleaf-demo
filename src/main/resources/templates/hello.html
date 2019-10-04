@@ -8,7 +8,25 @@
 <h1>THYMELEAF</h1>
 <p>Pozdrowienia hello world</p>
 <p th:text="${name}"></p>
-<p th:text="${car.getMark()}"></p>
-<p th:text="${car.getModel()}"></p>
+
+
+<table>
+    <tr>
+        <th>Marka</th>
+        <th>Model</th>
+    </tr>
+    <tr th:each="c:${cars}">
+        <td th:text="${c.getMark()}"></td>
+        <td th:text="${c.getModel()}"></td>
+    </tr>
+</table>
+
+<!--<tr th:each="c:${cars}">-->
+
+<!--    <td th:text="${c.getMark()}"/>-->
+<!--    <td th:text="${c.getModel()}"/>-->
+
+<!--</tr>-->
+
 </body>
 </html>
