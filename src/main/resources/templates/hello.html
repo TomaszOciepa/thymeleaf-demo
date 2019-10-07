@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
+
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -21,12 +21,12 @@
     </tr>
 </table>
 
-<!--<tr th:each="c:${cars}">-->
 
-<!--    <td th:text="${c.getMark()}"/>-->
-<!--    <td th:text="${c.getModel()}"/>-->
-
-<!--</tr>-->
+<form th:action="@{/add-car}" th:object="${newCar}" method="post">
+    <p>Mark: <input type="text" th:field="*{mark}"></p>
+    <p>Model: <input type="text" th:field="*{model}"></p>
+    <p><input type="submit" value="add new car"></p>
+</form>
 
 </body>
 </html>
